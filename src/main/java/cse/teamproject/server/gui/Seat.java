@@ -1,4 +1,4 @@
-package Management;
+package cse.teamproject.server.gui;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -11,12 +11,19 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class SeatGui extends JPanel {
+/**
+ * @author 하주현
+ * 
+ * 객실의 여러 특징을 적용하는 프레임
+ * @since 2019-05-19
+ */
+
+public class Seat extends JPanel {
     private BufferedImage img = null;
     JLabel label = new JLabel();
     private int numSeat;
     
-    public SeatGui(int numSeat){
+    public Seat(int numSeat){
         
         this.numSeat = numSeat;
         if(numSeat<7){

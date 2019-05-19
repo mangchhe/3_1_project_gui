@@ -1,4 +1,4 @@
-package Management;
+package cse.teamproject.server.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -9,14 +9,22 @@ import java.util.Date;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-class ClockMessageGui extends JPanel implements Runnable{
+/**
+ * @author 하주현
+ * 
+ * 현재 시간을 보여주는 Panel / 쓰레드를 이용한 최신화
+ * @since 2019-05-19
+ */
+
+class ClockMessage extends JPanel implements Runnable{
+    
     Calendar today = Calendar.getInstance();
     int i = today.get(Calendar.AM_PM);
     SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
     String time = sdf.format(new Date());
     JLabel timeLabel, ampmLabel;
     String[] ampm = {"AM", "PM"};
-    public ClockMessageGui(){
+    public ClockMessage(){
          this.setLayout(null);
          timeLabel = new JLabel(time);
          timeLabel.setBounds(0,0,100,70);

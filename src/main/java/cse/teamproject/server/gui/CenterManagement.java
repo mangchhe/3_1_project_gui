@@ -1,4 +1,4 @@
-package Management;
+package cse.teamproject.server.gui;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -13,11 +13,18 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class CenterManageGui extends JFrame {
+/**
+ * @author 하주현
+ * 
+ * 로그인 하고 나서 관리자에게 메인프레임 띄워주는 화면
+ * @since 2019-05-19
+ */
+
+public class CenterManagement extends JFrame {
     
     JButton btn,btn2,btn3;
     
-    public CenterManageGui(){
+    public CenterManagement(){
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
@@ -29,6 +36,9 @@ public class CenterManageGui extends JFrame {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(0,0,800,600);
         layeredPane.setLayout(null);
+        
+        // 관리자 채팅
+        MessageManagement messageManagementGui = new MessageManagement();
         
         // 메인 배경화면
         JPanel panel = new Background();
@@ -46,7 +56,7 @@ public class CenterManageGui extends JFrame {
         
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                new Seat35Gui();
+                new Seat35();
             }
         });
         
@@ -56,7 +66,7 @@ public class CenterManageGui extends JFrame {
         
         btn2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                System.out.println("구현");
+                new BookerManagement();
             }
         });
         
@@ -66,7 +76,7 @@ public class CenterManageGui extends JFrame {
         
         btn3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                System.out.println("구현");
+                new InventoryManagement();
             }
         });
         
@@ -80,7 +90,7 @@ public class CenterManageGui extends JFrame {
   
         */
         // 시계 이미지  
-        ClockMessageGui clockMessage = new ClockMessageGui();
+        ClockMessage clockMessage = new ClockMessage();
         clockMessage.setBounds(30,0,100,100);
         new Thread(clockMessage).start();
         
@@ -92,7 +102,7 @@ public class CenterManageGui extends JFrame {
     }
     
     public static void main(String[] args){
-        new CenterManageGui();
+        new CenterManagement();
    }
     
     class Background extends JPanel{

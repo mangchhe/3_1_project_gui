@@ -1,4 +1,4 @@
-package Management;
+package cse.teamproject.server.gui;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -8,15 +8,21 @@ import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
 
-public class Seat35Gui extends JFrame{
+/**
+ * @author 하주현
+ * 
+ * 객실 상태를 간편하게 보여준다. SeatGui 객실을 35개 불러온다.
+ * @since 2019-05-19
+ */
+
+public class Seat35 extends JFrame{
     
-    SeatGui[] seatPan = new SeatGui[35];   //  멀티
-    JPanel seat35 = new JPanel();   //  멀티
+    Seat[] seatPan = new Seat[35];
+    JPanel seat35 = new JPanel();
     int posXpanSeat, posYpanSeat;
     
-    public Seat35Gui(){
+    public Seat35(){
         
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible(true);
         setSize(1200,760);
         setTitle("ManagementView");
@@ -40,7 +46,7 @@ public class Seat35Gui extends JFrame{
        
         // seat35
         for(int seat =0;seat<35;seat++){
-            seatPan[seat] = new SeatGui(seat);
+            seatPan[seat] = new Seat(seat);
             if(seat % 7 ==0 && seat!=0){
                 posXpanSeat = 0;
                 posYpanSeat += 110;
@@ -50,7 +56,7 @@ public class Seat35Gui extends JFrame{
             posXpanSeat += 160;
         }
         
-        ClockMessageGui clockMessage = new ClockMessageGui();
+        ClockMessage clockMessage = new ClockMessage();
         clockMessage.setBounds(30,0,100,100);
         new Thread(clockMessage).start();
         
