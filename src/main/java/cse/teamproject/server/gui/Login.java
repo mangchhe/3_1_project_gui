@@ -1,6 +1,5 @@
 package cse.teamproject.server.gui;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,10 +28,6 @@ public class Login extends JFrame{
     JTextField loginTextField;
     JPasswordField passwordField;
     JButton btm, btm2;
-    
-    public static void main(String[] args){
-        new Login();
-    }
     
     public Login(){
         
@@ -101,6 +96,7 @@ public class Login extends JFrame{
             
                     if(existLogin){
                         JOptionPane.showMessageDialog(null, "Login Success");
+                        dispose();
                         new CenterManagement();
                     }else{
                         JOptionPane.showMessageDialog(null, "Login Fail");
@@ -130,6 +126,7 @@ public class Login extends JFrame{
         add(layeredPane);
         
         setVisible(true);
+        
     }
     
     class MyPanel extends JPanel{
@@ -137,4 +134,9 @@ public class Login extends JFrame{
             g.drawImage(img, 0, 0, null);
         }
     }
+    
+    public static void main(String[] args){
+        new Login();
+    }
+    
 }

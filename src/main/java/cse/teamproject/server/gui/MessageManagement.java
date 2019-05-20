@@ -8,6 +8,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
+import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -66,16 +68,11 @@ public class MessageManagement extends JFrame {
         
         // 연동
         serverBackground.setGui(this);
-        serverBackground.setting();
+    //    serverBackground.setting();
         
     }
     
     public void appendMsg(String msg){
         jta.append(msg+"\n");
     }
-    
-    public static void main(String[] args){
-        new MessageManagement();
-    }
-
 }

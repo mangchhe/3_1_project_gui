@@ -22,7 +22,8 @@ public class User extends Thread {
     String echoMsg;
     String nickName;
     Scanner sc = new Scanner(System.in);
-    HashMap<String, DataOutputStream> user = new HashMap<String, DataOutputStream>();
+    static HashMap<String, DataOutputStream> user = new HashMap<String, DataOutputStream>();
+    
     
     public User(){
         Collections.synchronizedMap(user);
@@ -40,14 +41,10 @@ public class User extends Thread {
         user.remove(nickName);
     }
     
-    public void run(){
-        while(true){
-            //echoMsg=sc.nextLine();
-
-        }
-    }
     public void sendMsg(String msg){
-        echoMsg=msg;
+            echoMsg=msg;
+            System.out.println(user.keySet());
+            System.out.println(user.keySet().iterator());
             Iterator it=user.keySet().iterator();
             if(echoMsg.equals("user")){
                 while(it.hasNext()){
@@ -58,7 +55,6 @@ public class User extends Thread {
             }
             else{
                 while(it.hasNext()){
-                    System.out.println("???");
                     nickName=(String)it.next();
                     try {
                         user.get(nickName).writeUTF("서버 : " + echoMsg);
@@ -67,6 +63,5 @@ public class User extends Thread {
                     }            
                 }
             }
-            System.out.println("???");
     }
 }

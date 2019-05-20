@@ -28,7 +28,6 @@ public class ServerBackground {
     public void setting(){
         try{
             serverSocket = new ServerSocket(7777);
-            user.start();
             while(true){
                 System.out.println("접속 대기중");
                 socket=serverSocket.accept();
@@ -63,7 +62,7 @@ public class ServerBackground {
                 user.AddClient(nickName, socket);
                 while(true){        
                     String msg = in.readUTF();
-                    System.out.println(nickName + " : " + msg);
+                    //System.out.println(nickName + " : " + msg);
                     // 연동
                     messageManagement.appendMsg(msg);
                 }

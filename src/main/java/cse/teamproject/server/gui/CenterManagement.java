@@ -1,6 +1,5 @@
 package cse.teamproject.server.gui;
 
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -22,17 +21,18 @@ import javax.swing.JPanel;
 
 public class CenterManagement extends JFrame {
     
-    JButton btn,btn2,btn3;
+    JButton btn,btn2,btn3,btn4;
+    
+    public static void main(String[] args){
+        new CenterManagement();
+    }
     
     public CenterManagement(){
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
         setSize(650,450);
         setTitle("ManagementView");
-        Dimension frameSize = this.getSize();
-        Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
-        setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
+        setLocationRelativeTo(null);
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(0,0,800,600);
         layeredPane.setLayout(null);
@@ -77,6 +77,16 @@ public class CenterManagement extends JFrame {
             }
         });
         
+        btn4 = new JButton("채팅창");
+        btn4.setBounds(525,365,75,30);
+        panel2.add(btn4);
+        // 관리자 채팅
+        btn4.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                new MessageManagement();
+            }
+        });
+        
         // 제목
         JLabel title = new JLabel("방 관리");
         title.setBounds(510,-50,200,200);
@@ -96,15 +106,11 @@ public class CenterManagement extends JFrame {
         layeredPane.add(clockMessage,new Integer(2));
     //    layeredPane.add(seat35,new Integer(2));
         add(layeredPane);
+        setVisible(true);
         
-        // 관리자 채팅
-        MessageManagement messageManagementGui = new MessageManagement();
-
+        new MessageManagement();
+        
     }
-    
-    public static void main(String[] args){
-        new CenterManagement();
-   }
     
     class Background extends JPanel{
         Image img;

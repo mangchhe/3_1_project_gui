@@ -100,6 +100,7 @@ public class Login extends JFrame{
             
                     if(existLogin){
                         JOptionPane.showMessageDialog(null, "Login Success");
+                        dispose();
                         new guestRoomStatusView();
                     }else{
                         JOptionPane.showMessageDialog(null, "Login Fail");
