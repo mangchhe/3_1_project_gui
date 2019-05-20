@@ -36,10 +36,7 @@ public class CenterManagement extends JFrame {
         JLayeredPane layeredPane = new JLayeredPane();
         layeredPane.setBounds(0,0,800,600);
         layeredPane.setLayout(null);
-        
-        // 관리자 채팅
-        MessageManagement messageManagementGui = new MessageManagement();
-        
+                
         // 메인 배경화면
         JPanel panel = new Background();
         panel.setLayout(null);
@@ -99,6 +96,10 @@ public class CenterManagement extends JFrame {
         layeredPane.add(clockMessage,new Integer(2));
     //    layeredPane.add(seat35,new Integer(2));
         add(layeredPane);
+        
+        // 관리자 채팅
+        MessageManagement messageManagementGui = new MessageManagement();
+
     }
     
     public static void main(String[] args){

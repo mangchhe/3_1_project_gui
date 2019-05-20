@@ -1,7 +1,6 @@
-package cse.teamproject.server.gui;
+package cse.teamproject.client.gui;
 
-import cse.teamproject.server.ServerBackground;
-import cse.teamproject.server.User;
+import cse.teamproject.client.ClientBackground;
 
 import java.awt.Dimension;
 import java.awt.Font;
@@ -17,7 +16,7 @@ import javax.swing.JTextField;
 /**
  * @author 하주현
  * 
- * 관리자가 사용자와 소통하는 메시지 창
+ * 사용자가 관리자와 소통 할 수 있는 메시지창
  * @since 2019-05-19
  */
 
@@ -26,26 +25,25 @@ public class MessageManagement extends JFrame {
         JTextArea jta = new JTextArea(40, 20);
         JTextField jtf = new JTextField(20);
         JButton btn;
-        ServerBackground serverBackground = new ServerBackground();
-        User user = new User();
+        ClientBackground clientBackground = new ClientBackground(); 
         
     public MessageManagement(){
 
         setSize(300,400);
-        setTitle("관리자 채팅");
+        setTitle("고객 채팅");
         setLayout(null);
         Dimension frameSize = this.getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((windowSize.width - frameSize.width) , (windowSize.height - frameSize.height));
-        
+
         JLabel label = new JLabel("할말 : ");
         label.setBounds(20,280,100,100);
         add(label);
-
+        
         jta.setBounds(20,20,247,280);
         add(jta);
         jta.setEnabled(false);
-        
+     
         jtf.setBounds(60,320,147,20);
         jtf.setText("할말을 입력해주세요.");
         add(jtf);
@@ -57,16 +55,15 @@ public class MessageManagement extends JFrame {
         
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                user.sendMsg(jtf.getText());
+                clientBackground.sendMsg(jtf.getText());
                 jtf.setText("");
             }
         });
         
         setVisible(true);
-        
-        // 연동
-        serverBackground.setGui(this);
-        serverBackground.setting();
+        //연동       
+        clientBackground.setGui(this);
+        clientBackground.connect();
         
     }
     
@@ -77,5 +74,5 @@ public class MessageManagement extends JFrame {
     public static void main(String[] args){
         new MessageManagement();
     }
-
+    
 }
