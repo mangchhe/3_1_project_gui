@@ -26,10 +26,10 @@ public class Register extends JFrame {
     
     BufferedImage img = null;
     
-    JButton btm,btm2,btm3;
-    JLabel jlb,jlb2,jlb3,jlb4,jlb5,jlb6,jlb7;
-    JTextField tfd,tfd2,tfd3,tfd4,tfd5,tfd6,tfd7;
-    JRadioButton jrb,jrb2;
+    private JButton btm,btm2,btm3;
+    private JLabel jlb,jlb2,jlb3,jlb4,jlb5,jlb6,jlb7;
+    private JTextField tfd,tfd2,tfd3,tfd4,tfd5,tfd6,tfd7;
+    private JRadioButton jrb,jrb2;
     
     public Register(){
         setTitle("회원가입");
@@ -63,9 +63,6 @@ public class Register extends JFrame {
         
         btm3=new JButton("중복확인");
         btm3.setBounds(284,79,88,18);
-   //     btm.setBorderPainted(false);
-   //     btm.setFocusPainted(false);
-   //     btm.setContentAreaFilled(false);
         layeredPane.add(btm3);
         
         jlb2 = new JLabel("이름");
@@ -136,16 +133,10 @@ public class Register extends JFrame {
         
         btm=new JButton("확인");
         btm.setBounds(20,530,160,40);
-   //     btm.setBorderPainted(false);
-   //     btm.setFocusPainted(false);
-   //     btm.setContentAreaFilled(false);
         layeredPane.add(btm);
         
         btm2=new JButton("취소");
         btm2.setBounds(215,530,160,40);
-   //     btm2.setBorderPainted(false);
-   //     btm2.setFocusPainted(false);
-   //     btm2.setContentAreaFilled(false);
         layeredPane.add(btm2);
         
         layeredPane.add(panel);

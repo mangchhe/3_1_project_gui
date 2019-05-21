@@ -18,12 +18,12 @@ import javax.swing.JPanel;
 
 class ClockMessage extends JPanel implements Runnable{
     
-    Calendar today = Calendar.getInstance();
-    int i = today.get(Calendar.AM_PM);
-    SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-    String time = sdf.format(new Date());
-    JLabel timeLabel, ampmLabel;
-    String[] ampm = {"AM", "PM"};
+    private Calendar today = Calendar.getInstance();
+    private int i = today.get(Calendar.AM_PM);
+    private SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
+    private String time = sdf.format(new Date());
+    private JLabel timeLabel, ampmLabel;
+    private String[] ampm = {"AM", "PM"};
     public ClockMessage(){
          this.setLayout(null);
          timeLabel = new JLabel(time);

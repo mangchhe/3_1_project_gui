@@ -24,10 +24,10 @@ import javax.swing.JTextField;
  */
 
 public class Login extends JFrame{
-    BufferedImage img = null;
-    JTextField loginTextField;
-    JPasswordField passwordField;
-    JButton btm, btm2;
+    private BufferedImage img = null;
+    private JTextField loginTextField;
+    private JPasswordField passwordField;
+    private JButton btm, btm2;
     
     public static void main(String[] args){
         new Login();

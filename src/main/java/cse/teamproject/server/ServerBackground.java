@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author 하주현
@@ -16,7 +18,7 @@ import java.util.Scanner;
  * @since 2019-05-20
  */
 
-public class ServerBackground {
+public class ServerBackground extends Thread {
     
     private ServerSocket serverSocket;
     private Socket socket;
@@ -25,20 +27,23 @@ public class ServerBackground {
     // 연동
     MessageManagement messageManagement;
     
-    public void setting(){
-        try{
+   public ServerBackground(){
+        try {
             serverSocket = new ServerSocket(7777);
-            while(true){
-                System.out.println("접속 대기중");
-                socket=serverSocket.accept();
-                System.out.println(socket.getInetAddress()+"님께서 접속하셨습니다.");
-                Access a=new Access(socket);
-                a.start();
-            }        
-        
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
+   }
+    public void run(){
+         while(true){
+             try {
+                 socket=serverSocket.accept();
+             } catch (IOException e) {
+                 e.printStackTrace();
+             }
+             Access a=new Access(socket);
+             a.start();
+         }
     }
     
     class Access extends Thread{
@@ -60,14 +65,13 @@ public class ServerBackground {
             try {                
                 nickName=in.readUTF();
                 user.AddClient(nickName, socket);
+                messageManagement.appendMsgFist(nickName);
                 while(true){        
                     String msg = in.readUTF();
-                    //System.out.println(nickName + " : " + msg);
-                    // 연동
-                    messageManagement.appendMsg(msg);
+                    messageManagement.appendMsg(nickName,msg);
                 }
             } catch (IOException e) {
-                System.out.println(nickName+"님께서 퇴장하셨습니다.");
+                messageManagement.appendMsgEnd(nickName);
                 user.RemoveClient(nickName);
             }
         }

@@ -21,11 +21,7 @@ import javax.swing.JPanel;
 
 public class CenterManagement extends JFrame {
     
-    JButton btn,btn2,btn3,btn4;
-    
-    public static void main(String[] args){
-        new CenterManagement();
-    }
+    private JButton btn,btn2,btn3;
     
     public CenterManagement(){
         
@@ -77,25 +73,13 @@ public class CenterManagement extends JFrame {
             }
         });
         
-        btn4 = new JButton("채팅창");
-        btn4.setBounds(525,365,75,30);
-        panel2.add(btn4);
-        // 관리자 채팅
-        btn4.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                new MessageManagement();
-            }
-        });
-        
         // 제목
-        JLabel title = new JLabel("방 관리");
-        title.setBounds(510,-50,200,200);
-        title.setFont(new Font("",Font.BOLD,50));
+        JLabel title = new JLabel("관리 시스템");
+        title.setBounds(230,-80,250,200);
+        title.setFont(new Font("",Font.BOLD,30));
         title.setOpaque(false);
-   //     panel.add(title);
-        /* 
-  
-        */
+        panel.add(title);
+        
         // 시계 이미지  
         ClockMessage clockMessage = new ClockMessage();
         clockMessage.setBounds(30,0,100,100);
@@ -104,10 +88,11 @@ public class CenterManagement extends JFrame {
         layeredPane.add(panel,new Integer(0));
         layeredPane.add(panel2,new Integer(1));
         layeredPane.add(clockMessage,new Integer(2));
-    //    layeredPane.add(seat35,new Integer(2));
+        
         add(layeredPane);
         setVisible(true);
         
+        // 관리자 채팅
         new MessageManagement();
         
     }

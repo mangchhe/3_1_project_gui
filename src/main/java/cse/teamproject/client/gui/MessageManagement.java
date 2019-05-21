@@ -22,10 +22,10 @@ import javax.swing.JTextField;
 
 public class MessageManagement extends JFrame {
     
-        JTextArea jta = new JTextArea(40, 20);
-        JTextField jtf = new JTextField(20);
-        JButton btn;
-        ClientBackground clientBackground = new ClientBackground(); 
+        private JTextArea jta = new JTextArea(40, 20);
+        private JTextField jtf = new JTextField(20);
+        private JButton btn;
+        private ClientBackground clientBackground = new ClientBackground(); 
         
     public MessageManagement(){
 
@@ -71,8 +71,8 @@ public class MessageManagement extends JFrame {
         jta.append(msg+"\n");
     }
     
-    public static void main(String[] args){
-        new MessageManagement();
+    public void msgMe(String msg){
+        jta.append(msg+"\n");
     }
     
 }

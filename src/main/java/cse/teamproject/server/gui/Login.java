@@ -24,10 +24,10 @@ import javax.swing.JTextField;
  */
 
 public class Login extends JFrame{
-    BufferedImage img = null;
-    JTextField loginTextField;
-    JPasswordField passwordField;
-    JButton btm, btm2;
+    private BufferedImage img = null;
+    private JTextField loginTextField;
+    private JPasswordField passwordField;
+    private JButton btm, btm2;
     
     public Login(){
         
@@ -63,7 +63,6 @@ public class Login extends JFrame{
         passwordField.setHorizontalAlignment(JTextField.CENTER);
         passwordField.setBounds(140,475,120,25);
         passwordField.setOpaque(false);
-    //    passwordField.setForeground(Color.green);
         passwordField.setBorder(javax.swing.BorderFactory.createEmptyBorder());
         layeredPane.add(passwordField);
         

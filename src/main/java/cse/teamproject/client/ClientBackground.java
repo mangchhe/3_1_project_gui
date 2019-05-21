@@ -12,29 +12,29 @@ import java.util.Scanner;
  * @author 하주현
  * 
  * 서버에 연결시도
- * @since 2019-05-20
+ * @since 2019-05-07
  */
 
 public class ClientBackground {
     
-    Socket socket;
-    DataInputStream in;
-    DataOutputStream out;
-    Scanner sc = new Scanner(System.in);
-    Receiver receiver = new Receiver();
-    MessageManagement messageManagement;
+    private Socket socket;
+    private DataInputStream in;
+    private DataOutputStream out;
+    private Scanner sc = new Scanner(System.in);
+    private Receiver receiver = new Receiver();
+    private MessageManagement messageManagement;
     
     public void connect(){
         
         try{
             
             socket = new Socket("localhost",7777);
-            System.out.println("접속에 성공하였습니다.");
+            messageManagement.msgMe("서버와 연결이 되었습니다.");
             
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
             
-            System.out.println("닉네임 입력해주세요");
+            messageManagement.msgMe("사용하실 닉네임을 입력해주세요");
             
             receiver.start();
         }catch(IOException e){
@@ -50,7 +50,7 @@ public class ClientBackground {
                                String msg = in.readUTF();
                                messageManagement.appendMsg(msg);
     			}catch(IOException e) {
-    				System.out.println("서버와의 연결이 끊겼습니다.");
+    				messageManagement.msgMe("서버와의 연결이 끊겼습니다.");
     				break;
     			}
     		}

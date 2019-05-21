@@ -20,7 +20,7 @@ import javax.swing.JPanel;
 
 public class Seat extends JPanel {
     private BufferedImage img = null;
-    JLabel label = new JLabel();
+    private JLabel label = new JLabel();
     private int numSeat;
     
     public Seat(int numSeat){

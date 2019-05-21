@@ -13,13 +13,13 @@ import javax.swing.JTable;
  * @author 하주현
  * 
  * 예약자를 관리하는 프레임
- * @since 2019-05-19
+ * @since 2019-05-15
  */
 
 public class BookerManagement extends JFrame {
     
-    JButton btn,btn2,btn3,btn4;
-    JLabel label;
+    private JButton btn,btn2,btn3,btn4;
+    private JLabel label;
     
     public BookerManagement(){
 

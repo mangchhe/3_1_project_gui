@@ -8,8 +8,6 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.DataOutputStream;
-import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -25,11 +23,11 @@ import javax.swing.JTextField;
 
 public class MessageManagement extends JFrame {
     
-        JTextArea jta = new JTextArea(40, 20);
-        JTextField jtf = new JTextField(20);
-        JButton btn;
-        ServerBackground serverBackground = new ServerBackground();
-        User user = new User();
+        private JTextArea jta = new JTextArea(40, 20);
+        private JTextField jtf = new JTextField(20);
+        private JButton btn;
+        private ServerBackground serverBackground = new ServerBackground();
+        private User user = new User();
         
     public MessageManagement(){
 
@@ -68,11 +66,19 @@ public class MessageManagement extends JFrame {
         
         // 연동
         serverBackground.setGui(this);
-    //    serverBackground.setting();
-        
+        serverBackground.start();
+            
     }
     
-    public void appendMsg(String msg){
-        jta.append(msg+"\n");
+    public void appendMsg(String nickName,String msg){
+        jta.append(nickName + " : " + msg + "\n");
+    }
+    
+    public void appendMsgFist(String nickName){
+        jta.append(nickName + "님이 접속하셨습니다. \n");
+    }
+    
+    public void appendMsgEnd(String nickName){
+        jta.append(nickName + "님이 퇴장하셨습니다. \n");
     }
 }

@@ -17,9 +17,9 @@ import javax.swing.JPanel;
 
 public class Seat35 extends JFrame{
     
-    Seat[] seatPan = new Seat[35];
-    JPanel seat35 = new JPanel();
-    int posXpanSeat, posYpanSeat;
+    private Seat[] seatPan = new Seat[35];
+    private JPanel seat35 = new JPanel();
+    private int posXpanSeat, posYpanSeat;
     
     public Seat35(){
         

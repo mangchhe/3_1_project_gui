@@ -4,7 +4,7 @@ package cse.teamproject.designpattern.decorator;
  * @author 하주현
  * 
  * 쿠폰에 대해 기본값 설정
- * @since 2019-05-20
+ * @since 2019-05-15
  */
 
 public abstract class Coupon {

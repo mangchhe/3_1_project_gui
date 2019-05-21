@@ -18,8 +18,8 @@ import javax.swing.JTable;
 
 public class InventoryManagement extends JFrame {
     
-    JButton btn,btn2,btn3,btn4;
-    JLabel label;
+    private JButton btn,btn2,btn3,btn4;
+    private JLabel label;
     
     public InventoryManagement(){
         

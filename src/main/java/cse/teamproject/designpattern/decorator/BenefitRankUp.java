@@ -4,7 +4,7 @@ package cse.teamproject.designpattern.decorator;
  * @author 하주현
  * 
  * 쿠폰에 대해 추가 등급을 추가한다.
- * @since 2019-05-20
+ * @since 2019-05-15
  */
 
 public class BenefitRankUp extends CouponDecorator {

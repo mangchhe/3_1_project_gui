@@ -4,7 +4,7 @@ package cse.teamproject.designpattern.decorator;
  * @author 하주현
  * 
  * 쿠폰을 제작하는 클래스
- * @since 2019-05-20
+ * @since 2019-05-15
  */
 
 public class ViewCoupon {

@@ -13,6 +13,7 @@ public class guestRoomStatusView extends  JFrame {
     
    public guestRoomStatusView(){
        
+       setDefaultCloseOperation(EXIT_ON_CLOSE);
        setVisible(true);
        setSize(600,400);
        setTitle("예약창");
