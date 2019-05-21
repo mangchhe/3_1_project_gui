@@ -25,7 +25,7 @@ public class ServerBackground extends Thread {
     private Scanner sc = new Scanner(System.in);
     private User user = new User();
     // 연동
-    MessageManagement messageManagement;
+    private MessageManagement messageManagement;
     
    public ServerBackground(){
         try {
