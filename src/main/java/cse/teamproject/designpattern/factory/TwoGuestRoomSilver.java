@@ -1,5 +1,12 @@
 package cse.teamproject.designpattern.factory;
 
+/**
+ * @author 하주현
+ * 
+ * 실버 2인 객실 구성 셋팅
+ * @since 2019-05-23
+ */
+
 class TwoGuestRoomSilver extends GuestRoom {
   public TwoGuestRoomSilver() {
     name="2인 객실[2]";

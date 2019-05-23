@@ -14,6 +14,7 @@ public abstract class GuestRoomBuild {
     public GuestRoom selectGuestRoom(String type){
         GuestRoom guestRoom = createGuestRoom(type);
         System.out.println("뚝딱뚝딱 객실을 만들자..\n");
+        guestRoom.toString();
         return guestRoom;
     }
 }
