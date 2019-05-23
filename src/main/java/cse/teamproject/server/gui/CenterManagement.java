@@ -49,7 +49,7 @@ public class CenterManagement extends JFrame {
         
         btn.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                new Seat35();
+                new Seat20();
             }
         });
         

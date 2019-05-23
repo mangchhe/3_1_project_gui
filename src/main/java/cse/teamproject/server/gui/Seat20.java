@@ -15,16 +15,16 @@ import javax.swing.JPanel;
  * @since 2019-05-19
  */
 
-public class Seat35 extends JFrame{
+public class Seat20 extends JFrame{
     
     private Seat[] seatPan = new Seat[35];
-    private JPanel seat35 = new JPanel();
+    private JPanel seat20 = new JPanel();
     private int posXpanSeat, posYpanSeat;
     
-    public Seat35(){
+    public Seat20(){
         
         setVisible(true);
-        setSize(1200,760);
+        setSize(800,700);
         setTitle("ManagementView");
         Dimension frameSize = this.getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -32,35 +32,35 @@ public class Seat35 extends JFrame{
         
         JLayeredPane layer = new JLayeredPane();
         layer.setLayout(null);
-        layer.setBounds(0,0,1200,760);
+        layer.setBounds(0,0,800,700);
         
         JLabel title = new JLabel("객실관리");
-        title.setBounds(510,-50,200,200);
+        title.setBounds(310,-50,200,200);
         title.setFont(new Font("",Font.BOLD,40));
         title.setOpaque(false);
         add(title);
 
-        seat35.setLayout(null);
-        seat35.setBounds(40,120,1200,760);
-        seat35.setOpaque(false);
+        seat20.setLayout(null);
+        seat20.setBounds(40,100,800,700);
+        seat20.setOpaque(false);
        
         // seat35
-        for(int seat =0;seat<35;seat++){
+        for(int seat =0;seat<20;seat++){
             seatPan[seat] = new Seat(seat);
-            if(seat % 7 ==0 && seat!=0){
+            if(seat % 4 ==0 && seat!=0){
                 posXpanSeat = 0;
                 posYpanSeat += 110;
             }
             seatPan[seat].setBounds(posXpanSeat, posYpanSeat, 140, 100);
-            seat35.add(seatPan[seat]);
-            posXpanSeat += 160;
+            seat20.add(seatPan[seat]);
+            posXpanSeat += 180;
         }
         
         ClockMessage clockMessage = new ClockMessage();
         clockMessage.setBounds(30,0,100,100);
         new Thread(clockMessage).start();
         
-        layer.add(seat35,new Integer(0));
+        layer.add(seat20,new Integer(0));
         layer.add(clockMessage,new Integer(1));
         add(layer);
         

@@ -26,16 +26,16 @@ public class Seat extends JPanel {
     public Seat(int numSeat){
         
         this.numSeat = numSeat;
-        if(numSeat<7){
+        if(numSeat<4){
             img("5");
         }
-        else if(numSeat<14){
+        else if(numSeat<8){
             img("4");
         }
-        else if(numSeat<21){
+        else if(numSeat<12){
             img("3");
         }
-        else if(numSeat<28){
+        else if(numSeat<16){
             img("2");
         }
         else{
