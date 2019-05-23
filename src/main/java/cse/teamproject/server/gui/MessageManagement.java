@@ -73,9 +73,11 @@ public class MessageManagement extends JFrame {
     public void appendMsg(String nickName,String msg){
         jta.append(nickName + " : " + msg + "\n");
     }
+    
     public void appendMsgFist(String nickName){
         jta.append(nickName + "님이 접속하셨습니다. \n");
     }
+    
     public void appendMsgEnd(String nickName){
         jta.append(nickName + "님이 퇴장하셨습니다. \n");
     }

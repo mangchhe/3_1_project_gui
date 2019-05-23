@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * @author 하주현
  * 
  * 서버 소켓 생성하여 클라이언트 접속을 기다린다.
- * @since 2019-05-20
+ * @since 2019-05-07
  */
 
 public class ServerBackground extends Thread {
@@ -25,7 +25,7 @@ public class ServerBackground extends Thread {
     private Scanner sc = new Scanner(System.in);
     private User user = new User();
     // 연동
-    private MessageManagement messageManagement;
+    MessageManagement messageManagement;
     
    public ServerBackground(){
         try {

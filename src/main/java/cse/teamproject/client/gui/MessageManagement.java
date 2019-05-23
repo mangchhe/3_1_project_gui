@@ -74,4 +74,5 @@ public class MessageManagement extends JFrame {
     public void msgMe(String msg){
         jta.append(msg+"\n");
     }
+    
 }
