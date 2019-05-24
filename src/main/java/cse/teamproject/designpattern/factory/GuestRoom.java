@@ -18,7 +18,7 @@ public abstract class GuestRoom {
   protected int rank;
   protected int price;
   protected int bed;
-  protected StringBuilder explanation = new StringBuilder();
+  public StringBuilder explanation = new StringBuilder();
   
   public String toString(){
       explanation.append("---------------------------------------\n");

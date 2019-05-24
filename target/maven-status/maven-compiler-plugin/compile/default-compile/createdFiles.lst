@@ -20,6 +20,7 @@ cse\teamproject\client\gui\Register.class
 cse\teamproject\designpattern\decorator\BenefitRankUp.class
 cse\teamproject\client\gui\Login$2.class
 cse\teamproject\server\gui\CenterManagement$2.class
+cse\teamproject\designpattern\factory\Main.class
 cse\teamproject\server\ServerBackground.class
 cse\teamproject\client\gui\Login.class
 cse\teamproject\server\gui\Login$MyPanel.class

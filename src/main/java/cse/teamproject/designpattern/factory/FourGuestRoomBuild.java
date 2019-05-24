@@ -7,7 +7,7 @@ package cse.teamproject.designpattern.factory;
  * @since 2019-05-23
  */
 
-class FourGuestRoomBuild extends GuestRoomBuild {
+public class FourGuestRoomBuild extends GuestRoomBuild {
     public GuestRoom createGuestRoom(String type){
         if(type.equals("Bronze")){
             return new FourGuestRoomBronze();

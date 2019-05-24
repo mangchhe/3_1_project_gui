@@ -34,7 +34,6 @@ C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpa
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\server\ServerBackground.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\decorator\BenefitPoint.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\client\ClientBackground.java
-C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\factory\GuestRoomStorage.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\factory\OneGuestRoomSilver.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\factory\FiveGuestRoomSilver.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\factory\ThreeGuestRoomSilver.java
@@ -46,6 +45,7 @@ C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpa
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\server\gui\Login.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\client\gui\Register.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\factory\FiveGuestRoomGold.java
+C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\observer\GuestRoomStorage.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\factory\FiveGuestRoomDiamond.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\server\gui\Register.java
 C:\Users\HaJuHyun\Desktop\3_1_project_gui\src\main\java\cse\teamproject\designpattern\decorator\BenefitDiscount.java
