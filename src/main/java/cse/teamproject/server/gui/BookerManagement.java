@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * @author 하주현
@@ -22,15 +23,23 @@ public class BookerManagement extends JFrame {
     private JLabel label;
     
     public BookerManagement(){
+        
+        String header[] = {"예약자 이름","객실 번호","시작 날짜","끝 날짜"};
+        String contents[][]={};
 
         setTitle("예악자 관리");
-        setVisible(true);
         setSize(600,400);
         setLayout(null);
         
         Dimension frameSize = this.getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
+        
+        DefaultTableModel model = new DefaultTableModel(contents,header);
+        JTable table = new JTable(model);
+        JScrollPane sc = new JScrollPane(table);
+        sc.setBounds(160,90,400,240);
+        add(sc);
         
         label = new JLabel("예약자 관리");
         label.setBounds(300,0,200,80);
@@ -54,24 +63,9 @@ public class BookerManagement extends JFrame {
         clockMessage.setBounds(30,0,100,100);
         new Thread(clockMessage).start();
         add(clockMessage);
+        
+        setVisible(true);
        
-        String header[] = {"예약자 이름","객실 번호","시작 날짜","끝 날짜"};
-        String contents[][]={{"1","2","3","4"},{"1","2","3","4"}};
-        JTable table = new JTable(contents,header);
-        JScrollPane scrollPane = new JScrollPane(table);
-        scrollPane.setBounds(160,90,400,240);
-        add(scrollPane);
-        
-        //table.setEnabled(false);
-        // table.setValueAt("헤에", 1,0); 테이블에 값 추가하기
-        
-        /*
-        addWindowListener(new WindowAdapter(){
-            public void windowClosing(WindowEvent e){
-                Thread.interrupted();
-            }
-        });
-        */
     }
     
 }

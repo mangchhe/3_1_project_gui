@@ -22,7 +22,7 @@ import javax.swing.JPanel;
 public class CenterManagement extends JFrame {
     
     private JButton btn,btn2,btn3;
-    
+
     public CenterManagement(){
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);

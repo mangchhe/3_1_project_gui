@@ -2,6 +2,7 @@ cse\teamproject\designpattern\decorator\BenefitDiscount.class
 cse\teamproject\client\ClientBackground$Receiver.class
 cse\teamproject\designpattern\decorator\Diamond.class
 cse\teamproject\designpattern\decorator\CouponDecorator.class
+cse\teamproject\server\gui\InventorySearchResult.class
 cse\teamproject\server\gui\Login.class
 cse\teamproject\server\gui\Seat20.class
 cse\teamproject\designpattern\decorator\ViewCoupon.class
@@ -11,10 +12,14 @@ cse\teamproject\server\ServerBackground$Access.class
 cse\teamproject\designpattern\decorator\Gold.class
 cse\teamproject\server\User.class
 cse\teamproject\client\gui\Register$MyPanel.class
+cse\teamproject\server\gui\InventorySearch$1.class
 cse\teamproject\server\gui\CenterManagement$1.class
 cse\teamproject\server\gui\Login$2.class
 cse\teamproject\designpattern\decorator\Silver.class
 cse\teamproject\designpattern\decorator\Bronze.class
+cse\teamproject\server\gui\InventoryManagement$1.class
+cse\teamproject\server\gui\InventorySearch.class
+cse\teamproject\server\gui\InventoryPermute$1.class
 cse\teamproject\client\ClientBackground.class
 cse\teamproject\client\gui\Register.class
 cse\teamproject\designpattern\decorator\BenefitRankUp.class
@@ -23,7 +28,9 @@ cse\teamproject\designpattern\singleton\GuestRoomStorage.class
 cse\teamproject\server\gui\CenterManagement$2.class
 cse\teamproject\server\ServerBackground.class
 cse\teamproject\designpattern\singleton\Main.class
+cse\teamproject\server\gui\InventoryManagement$2.class
 cse\teamproject\client\gui\Login.class
+cse\teamproject\server\gui\InventoryPermute.class
 cse\teamproject\server\gui\Login$MyPanel.class
 cse\teamproject\client\gui\Login$MyPanel.class
 cse\teamproject\server\gui\Register$MyPanel.class
