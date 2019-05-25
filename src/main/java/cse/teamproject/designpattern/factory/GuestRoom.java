@@ -19,6 +19,7 @@ public abstract class GuestRoom {
   protected int rank;
   protected int price;
   protected int bed;
+  protected int guestRoomState=0;
   public StringBuilder explanation = new StringBuilder();
   
   public String toString(){
@@ -37,9 +38,18 @@ public abstract class GuestRoom {
       return explanation.toString();
   }
   
-  public void permutePillow(){}
-  public void permuteBlanket(){}
-  public void permuteTowel(){}
+  public void permutePillow(int pillow){
+      this.pillow += pillow;
+  }
+  public void permuteBlanket(int blanket){
+      this.blanket += blanket;
+  }
+  public void permuteTowel(int towel){
+      this.towel += towel;
+  }
+  public void permuteBed(int bed){
+      this.bed += bed;
+  }
   
   public int getBed(){
       return bed;

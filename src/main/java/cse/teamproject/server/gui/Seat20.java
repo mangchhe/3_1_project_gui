@@ -66,7 +66,6 @@ public class Seat20 extends JFrame{
                         explanation.append(guestRoom[i].getBlanket()+"\r\n");
                         explanation.append(guestRoom[i].getTowel()+"\r\n");
                         explanation.append(guestRoom[i].getPillow()+"\r\n");
-                        System.out.println(explanation.toString());
                         bos.write(explanation.toString().getBytes());
                         bos.close();
                     }
@@ -102,9 +101,6 @@ public class Seat20 extends JFrame{
         layer.add(updateRoom,new Integer(3));
         add(layer);
         
-    }
-    public static void main(String[] args){
-        new Seat20();
     }
     
 }

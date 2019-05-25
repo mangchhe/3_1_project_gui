@@ -55,8 +55,8 @@ public class InventoryManagement extends JFrame {
         new Thread(clockMessage).start();
         add(clockMessage);
        
-        String header[] = {"객실 번호","수건","배게","이불"};
-        String contents[][]={{"1","2","3","4"},{"1","2","3","4"}};
+        String header[] = {"객실 번호","수건","배게","이불","침대"};
+        String contents[][]={{"1","2","3","4","5"},{"1","2","3","4","5"}};
         JTable table = new JTable(contents,header);
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(160,90,400,240);
