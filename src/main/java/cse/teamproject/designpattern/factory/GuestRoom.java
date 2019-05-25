@@ -5,6 +5,7 @@ package cse.teamproject.designpattern.factory;
  * 
  * 객체에 포함되어 있어야 하는 구성요소(추상클래스)
  * @since 2019-05-23
+ *         2019-05-25 값 get/set 메소드 추가
  */
 
 public abstract class GuestRoom {
@@ -39,4 +40,29 @@ public abstract class GuestRoom {
   public void permutePillow(){}
   public void permuteBlanket(){}
   public void permuteTowel(){}
+  
+  public int getBed(){
+      return bed;
+  }
+  public int getBlanket(){
+      return blanket;
+  }
+  public int getTowel(){
+      return towel;
+  }
+  public int getPillow(){
+      return pillow;
+  }
+  public void setBed(int bed){
+      this.bed=bed;
+  }
+  public void setBlanket(int blanket){
+      this.blanket=blanket;
+  }
+  public void setTowel(int towel){
+      this.towel=towel;
+  }
+  public void setPillow(int pillow){
+      this.pillow=pillow;
+  }
 }

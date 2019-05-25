@@ -19,14 +19,16 @@ cse\teamproject\client\ClientBackground.class
 cse\teamproject\client\gui\Register.class
 cse\teamproject\designpattern\decorator\BenefitRankUp.class
 cse\teamproject\client\gui\Login$2.class
+cse\teamproject\designpattern\singleton\GuestRoomStorage.class
 cse\teamproject\server\gui\CenterManagement$2.class
-cse\teamproject\designpattern\factory\Main.class
 cse\teamproject\server\ServerBackground.class
+cse\teamproject\designpattern\singleton\Main.class
 cse\teamproject\client\gui\Login.class
 cse\teamproject\server\gui\Login$MyPanel.class
 cse\teamproject\client\gui\Login$MyPanel.class
 cse\teamproject\server\gui\Register$MyPanel.class
 cse\teamproject\designpattern\decorator\BenefitPoint.class
+cse\teamproject\server\gui\Seat20$1.class
 cse\teamproject\server\gui\Register.class
 cse\teamproject\server\gui\CenterManagement$3.class
 cse\teamproject\server\gui\Login$1.class
