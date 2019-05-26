@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.io.IOException;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileOutputStream;
 import java.util.Scanner;
 
 /**
@@ -23,17 +24,27 @@ public class ClientBackground {
     private Scanner sc = new Scanner(System.in);
     private Receiver receiver = new Receiver();
     private MessageManagement messageManagement;
+    private FileOutputStream fos;
     
     public void connect(){
         
         try{
             
-            socket = new Socket("58.126.125.202",7777);
+            socket = new Socket("localhost",7777);
             messageManagement.msgMe("서버와 연결이 되었습니다.");
             
             in = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
             
+            for(int i=0;i<20;i++){
+                fos = new FileOutputStream("reservationStateClient/"+i+".txt");
+                while(true){
+                    int data = in.read();
+                    if(data == 0) break;
+                    fos.write(data);
+                }
+            }
+            fos.close();
             messageManagement.msgMe("사용하실 닉네임을 입력해주세요");
             
             receiver.start();

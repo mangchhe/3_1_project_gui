@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.io.IOException;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.util.Scanner;
 
 /**
@@ -49,11 +50,27 @@ public class ServerBackground extends Thread {
     private DataInputStream in;
     private DataOutputStream out;
     private String nickName;
+    private FileInputStream fin;
     
         public Access(Socket socket){
             try{
+                // 통로 연결
                 in = new DataInputStream(socket.getInputStream());
                 out = new DataOutputStream(socket.getOutputStream());           
+                // 파일 전송
+                for(int i=0;i<20;i++){
+                    fin = new FileInputStream("reservationState/"+i+".txt");
+                    while(true){
+                        int data = fin.read();
+                        if(data == -1){
+                            out.write(0);
+                            break;
+                        }
+                        out.write(data);
+                    }
+                }
+                fin.close();
+                
             }catch(IOException e){
                 e.printStackTrace();
             }
