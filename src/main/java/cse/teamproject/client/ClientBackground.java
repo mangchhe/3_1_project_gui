@@ -28,7 +28,7 @@ public class ClientBackground {
         
         try{
             
-            socket = new Socket("localhost",7777);
+            socket = new Socket("58.126.125.202",7777);
             messageManagement.msgMe("서버와 연결이 되었습니다.");
             
             in = new DataInputStream(socket.getInputStream());

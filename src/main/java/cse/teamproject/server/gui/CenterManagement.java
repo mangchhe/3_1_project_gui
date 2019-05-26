@@ -1,11 +1,19 @@
 package cse.teamproject.server.gui;
 
+import cse.teamproject.designpattern.factory.GuestRoom;
+import cse.teamproject.designpattern.singleton.GuestRoomStorage;
+
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,15 +25,48 @@ import javax.swing.JPanel;
  * 
  * 로그인 하고 나서 관리자에게 메인프레임 띄워주는 화면
  * @since 2019-05-19
+ *         2019-05-26 파일입출력 추가(끌 때 현재 좌석현황을 텍스트파일로 저장한다.)
  */
 
 public class CenterManagement extends JFrame {
     
     private JButton btn,btn2,btn3;
+    GuestRoomStorage guestRoomStorage = GuestRoomStorage.getInstance();
+    GuestRoom[] guestRoom = guestRoomStorage.getStorage();
+    BufferedOutputStream bos;
 
     public CenterManagement(){
         
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter(){
+           public void windowClosing(WindowEvent e){
+                try{
+                    for(int i=0;i<20;i++){
+                        StringBuilder explanation = new StringBuilder();
+                        bos = new BufferedOutputStream(new FileOutputStream("guestroomdb/"+i+".txt"));
+                        explanation.append(guestRoom[i].getBed()+"\r\n");
+                        explanation.append(guestRoom[i].getBlanket()+"\r\n");
+                        explanation.append(guestRoom[i].getTowel()+"\r\n");
+                        explanation.append(guestRoom[i].getPillow()+"\r\n");
+                        bos.write(explanation.toString().getBytes());
+                        bos.close();
+                    }
+                    for(int i=0;i<20;i++){
+                        StringBuilder state = new StringBuilder();
+                        boolean[] isstate = new boolean[30];
+                        bos = new BufferedOutputStream(new FileOutputStream("reservationState/"+i+".txt"));
+                        isstate=guestRoom[i].getState();
+                        for(int j=0;j<30;j++){
+                            state.append(isstate[j]+"\r\n");
+                        }
+                        bos.write(state.toString().getBytes());
+                        bos.close();
+                    }
+                }catch(IOException o){
+                    System.out.println("파일을 찾지 못하였습니다.");
+                }
+                System.exit(0);
+           }
+        });
         setSize(650,450);
         setTitle("ManagementView");
         setLocationRelativeTo(null);

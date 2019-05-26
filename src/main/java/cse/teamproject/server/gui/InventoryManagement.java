@@ -85,9 +85,6 @@ public class InventoryManagement extends JFrame {
             m.insertRow(i, new Object[]{String.valueOf(i+1), String.valueOf(guestRoom[i].getTowel()), String.valueOf(guestRoom[i].getPillow()), 
                 String.valueOf(guestRoom[i].getBlanket()), String.valueOf(guestRoom[i].getBed())});
         }
-       
-        setVisible(true);
-        
+        setVisible(true); 
     }
-    
 }

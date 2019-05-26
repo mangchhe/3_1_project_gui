@@ -19,7 +19,7 @@ public abstract class GuestRoom {
   protected int rank;
   protected int price;
   protected int bed;
-  protected int guestRoomState=0;
+  protected boolean[] guestRoomState = new boolean[30];
   public StringBuilder explanation = new StringBuilder();
   
   public String toString(){
@@ -63,6 +63,10 @@ public abstract class GuestRoom {
   public int getPillow(){
       return pillow;
   }
+  public boolean[] getState(){
+      return guestRoomState;
+  }
+  
   public void setBed(int bed){
       this.bed=bed;
   }
@@ -74,5 +78,8 @@ public abstract class GuestRoom {
   }
   public void setPillow(int pillow){
       this.pillow=pillow;
+  }
+  public void setState(boolean[] guestRoomState){
+      this.guestRoomState=guestRoomState;
   }
 }

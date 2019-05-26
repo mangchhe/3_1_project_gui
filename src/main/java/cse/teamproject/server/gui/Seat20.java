@@ -1,15 +1,10 @@
 package cse.teamproject.server.gui;
 
-import cse.teamproject.designpattern.factory.GuestRoom;
-import cse.teamproject.designpattern.singleton.GuestRoomStorage;
-
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -27,17 +22,12 @@ import javax.swing.JPanel;
 
 public class Seat20 extends JFrame{
     
-    private Seat[] seatPan = new Seat[35];
+    private Seat[] seatPan = new Seat[20];
     private JPanel seat20 = new JPanel();
     private int posXpanSeat, posYpanSeat;
-    private JButton updateRoom;
-    private GuestRoomStorage guestRoomStorage = GuestRoomStorage.getInstance();
-    private GuestRoom[] guestRoom = guestRoomStorage.getStorage();
-    private BufferedOutputStream bos;
     
     public Seat20(){
         
-        setVisible(true);
         setSize(800,700);
         setTitle("ManagementView");
         Dimension frameSize = this.getSize();
@@ -52,34 +42,11 @@ public class Seat20 extends JFrame{
         title.setBounds(310,-50,200,200);
         title.setFont(new Font("",Font.BOLD,40));
         title.setOpaque(false);
-        
-        updateRoom = new JButton("객실 최신화");
-        updateRoom.setBounds(620,20,125,45);
-        
-        updateRoom.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                try{
-                    for(int i=0;i<20;i++){
-                        StringBuilder explanation = new StringBuilder();
-                        bos = new BufferedOutputStream(new FileOutputStream("guestroomdb/"+i+".txt"));
-                        explanation.append(guestRoom[i].getBed()+"\r\n");
-                        explanation.append(guestRoom[i].getBlanket()+"\r\n");
-                        explanation.append(guestRoom[i].getTowel()+"\r\n");
-                        explanation.append(guestRoom[i].getPillow()+"\r\n");
-                        bos.write(explanation.toString().getBytes());
-                        bos.close();
-                    }
-                }catch(IOException o){
-                    System.out.println("파일을 찾지 못하였습니다.");
-                }
-            }
-        });
 
         seat20.setLayout(null);
         seat20.setBounds(40,100,800,700);
         seat20.setOpaque(false);
        
-        // seat35
         for(int seat =0;seat<20;seat++){
             seatPan[seat] = new Seat(seat);
             if(seat % 4 ==0 && seat!=0){
@@ -98,9 +65,8 @@ public class Seat20 extends JFrame{
         layer.add(seat20,new Integer(0));
         layer.add(clockMessage,new Integer(1));
         layer.add(title,new Integer(2));
-        layer.add(updateRoom,new Integer(3));
         add(layer);
         
+        setVisible(true);
     }
-    
 }

@@ -77,6 +77,7 @@ public class InventoryPermute extends JFrame {
                 else{
                     JOptionPane.showMessageDialog(null, "0 : 수건 // 1 : 베개 // 2 : 이불 // 3 : 침대 중에 선택해주세요.");
                 }
+                dispose();
             }
         });
         
