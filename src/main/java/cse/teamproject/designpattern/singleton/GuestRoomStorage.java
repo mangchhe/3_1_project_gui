@@ -58,7 +58,7 @@ public class GuestRoomStorage {
                 br = new BufferedReader(new FileReader("guestroomdb/"+i+".txt"));
             while(true){
                 String line = br.readLine();
-                if(line==null){
+                if(line == null){
                     br.close();
                     break;
                 }
@@ -83,9 +83,26 @@ public class GuestRoomStorage {
                 System.out.println("파일을 열지 못했습니다.");
             }
         }
-        
+        for(int i=0;i<20;i++){
+            boolean[] temp = new boolean[30];
+            int count=0;
+            try{
+                br = new BufferedReader(new FileReader("reservationState/"+i+".txt"));
+                while(true){
+                    String line = br.readLine();
+                    if(line == null){
+                        br.close();
+                        break;
+                    }
+                    temp[count]=Boolean.parseBoolean(line);
+                    count++;
+                }
+                guestRoom[i].setState(temp);
+            }catch(IOException ex){
+                System.out.println("파일을 열지 못했습니다.");
+            }
+        }
     }
-    
     public static GuestRoomStorage getInstance(){
         if(guestRoomStorage==null){
             guestRoomStorage = new GuestRoomStorage();

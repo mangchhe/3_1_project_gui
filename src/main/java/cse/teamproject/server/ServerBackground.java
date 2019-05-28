@@ -15,6 +15,7 @@ import java.util.Scanner;
  * 
  * 서버 소켓 생성하여 클라이언트 접속을 기다린다.
  * @since 2019-05-07
+ *         2019-05-27 서버에 들어올 시 고객에게 객실예약정보 파일 전송 구현
  */
 
 public class ServerBackground extends Thread {
@@ -60,6 +61,17 @@ public class ServerBackground extends Thread {
                 // 파일 전송
                 for(int i=0;i<20;i++){
                     fin = new FileInputStream("reservationState/"+i+".txt");
+                    while(true){
+                        int data = fin.read();
+                        if(data == -1){
+                            out.write(0);
+                            break;
+                        }
+                        out.write(data);
+                    }
+                }
+                for(int i=0;i<20;i++){
+                    fin  = new FileInputStream("guestRoomExplanation/"+i+".txt");
                     while(true){
                         int data = fin.read();
                         if(data == -1){

@@ -61,12 +61,18 @@ public class CenterManagement extends JFrame {
                         bos.write(state.toString().getBytes());
                         bos.close();
                     }
+                    for(int i=0;i<20;i++){
+                        bos = new BufferedOutputStream(new FileOutputStream("guestRoomExplanation/"+i+".txt"));
+                        bos.write(guestRoom[i].toString().getBytes());
+                        bos.close();
+                    }
                 }catch(IOException o){
                     System.out.println("파일을 찾지 못하였습니다.");
                 }
                 System.exit(0);
            }
         });
+        
         setSize(650,450);
         setTitle("ManagementView");
         setLocationRelativeTo(null);

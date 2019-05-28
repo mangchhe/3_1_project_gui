@@ -14,6 +14,7 @@ import java.util.Scanner;
  * 
  * 서버에 연결시도
  * @since 2019-05-07
+ *         2019-05-27 서버 연결 시 파일 전송 받기 구현
  */
 
 public class ClientBackground {
@@ -30,7 +31,7 @@ public class ClientBackground {
         
         try{
             
-            socket = new Socket("localhost",7777);
+            socket = new Socket("127.0.0.1",7777);
             messageManagement.msgMe("서버와 연결이 되었습니다.");
             
             in = new DataInputStream(socket.getInputStream());
@@ -38,6 +39,14 @@ public class ClientBackground {
             
             for(int i=0;i<20;i++){
                 fos = new FileOutputStream("reservationStateClient/"+i+".txt");
+                while(true){
+                    int data = in.read();
+                    if(data == 0) break;
+                    fos.write(data);
+                }
+            }
+            for(int i=0;i<20;i++){
+                fos = new FileOutputStream("guestRoomExplanationClient/"+i+".txt");
                 while(true){
                     int data = in.read();
                     if(data == 0) break;
